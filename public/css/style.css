@@ -1,0 +1,189 @@
+/* Diseño General de la Página */
+body {
+  font-family: Arial, sans-serif; /* Fuente limpia y moderna */
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8; /* Fondo claro */
+}
+
+/* Encabezado */
+header {
+  background-color: #007bff; /* Azul moderno */
+  color: white; /* Texto blanco */
+  padding: 20px 0; /* Espaciado interno */
+  text-align: center; /* Centrar contenido */
+  font-size: 24px; /* Tamaño de la fuente */
+}
+
+/* Filtros de Categoría */
+.filter-buttons {
+  text-align: center; /* Centrar botones */
+  margin: 20px 0; /* Espaciado inferior */
+}
+
+.filter-buttons .btn-filter {
+  background-color: #007bff; /* Azul moderno */
+  color: white; /* Texto blanco */
+  border: none; /* Sin bordes */
+  padding: 10px 15px; /* Espaciado interno */
+  margin: 5px; /* Espaciado entre botones */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambiar cursor al pasar */
+}
+
+.filter-buttons .btn-filter:hover {
+  background-color: #0056b3; /* Azul más oscuro al pasar */
+}
+
+/* Lista de Productos */
+#product-list {
+  display: flex; /* Mostrar productos en línea */
+  flex-wrap: wrap; /* Ajustar productos automáticamente en varias filas */
+  justify-content: center; /* Centrar contenido */
+  gap: 15px; /* Espaciado entre tarjetas */
+  padding: 20px; /* Espaciado interno */
+}
+
+/* Tarjetas de Productos */
+.product-card {
+  background-color: #fff; /* Fondo blanco limpio */
+  border: 1px solid #ddd; /* Borde fino */
+  border-radius: 10px; /* Esquinas redondeadas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombras suaves */
+  width: 250px; /* Ancho fijo */
+  text-align: center; /* Centrar contenido */
+  overflow: hidden; /* Evitar desbordes */
+}
+
+.product-card img {
+  width: 100%; /* Imagen ajustada al ancho de la tarjeta */
+  height: auto; /* Mantener proporción */
+  border-bottom: 1px solid #ddd; /* Línea divisoria con el contenido */
+}
+
+.product-card .card-body {
+  padding: 15px; /* Espaciado interno */
+}
+
+.product-card .card-title {
+  font-size: 18px; /* Tamaño del título */
+  font-weight: bold; /* Negrita para resaltar */
+  margin-bottom: 10px; /* Separación con el texto */
+}
+
+.product-card .card-text {
+  font-size: 16px; /* Tamaño del texto */
+  color: #555; /* Color gris suave */
+}
+
+.product-card .btn-add-cart {
+  background-color: #007bff; /* Azul moderno */
+  color: white; /* Texto blanco */
+  border: none; /* Sin bordes */
+  padding: 10px 15px; /* Espaciado interno */
+  margin-top: 10px; /* Separación con el contenido */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambiar cursor al pasar */
+}
+
+.product-card .btn-add-cart:hover {
+  background-color: #0056b3; /* Azul más oscuro al pasar */
+}
+
+/* Carrito de Compras */
+.cart-container {
+  display: none; /* Ocultar el carrito inicialmente */
+  background-color: hsl(0, 0%, 98%); /* Fondo amarillo vibrante */
+  border: 2px solid #ffcc00; /* Borde dorado para destacar */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombras un poco más marcadas */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 15px; /* Bordes más redondeados */
+  position: absolute; /* Posicionar relativo a la ventana */
+  top: 20px; /* Distancia desde la parte superior */
+  right: 20px; /* Distancia desde la derecha */
+  width: 350px; /* Ancho más grande para mayor espacio */
+  z-index: 1000; /* Mostrar encima de otros elementos */
+  animation: fade-in 0.3s ease-in-out; /* Animación de entrada */
+}
+
+/* Elementos dentro del carrito */
+.cart-container h4 {
+  font-size: 20px; /* Tamaño más grande */
+  font-weight: bold; /* Texto en negrita */
+  color: #333; /* Color del texto */
+  margin-bottom: 15px; /* Espaciado inferior */
+}
+
+.cart-container p {
+  font-size: 16px; /* Texto claro y legible */
+  color: #555; /* Gris suave */
+}
+
+/* Botones dentro del carrito */
+.cart-container .btn {
+  display: inline-block; /* Mostrar los botones en línea */
+  padding: 10px 15px; /* Espaciado interno */
+  margin: 10px; /* Espaciado entre botones */
+  border: none; /* Sin bordes */
+  border-radius: 10px; /* Bordes redondeados */
+  cursor: pointer; /* Cambiar cursor al pasar */
+  color: white; /* Texto blanco */
+  font-size: 14px; /* Tamaño del texto */
+  font-weight: bold; /* Texto en negrita */
+}
+
+/* Botón Vaciar Carrito */
+.cart-container .btn-danger {
+  background-color: #ff5733; /* Rojo vibrante */
+}
+
+.cart-container .btn-danger:hover {
+  background-color: #c70039; /* Rojo más oscuro al pasar */
+}
+
+/* Botón Finalizar Compra */
+.cart-container .btn-success {
+  background-color: #28a745; /* Verde moderno */
+}
+
+.cart-container .btn-success:hover {
+  background-color: #218838; /* Verde más oscuro al pasar */
+}
+
+/* Animación para el carrito */
+@keyframes fade-in {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Botón para Mostrar/Ocultar Carrito */
+.btn-cart-icon {
+  background-color: #007bff; /* Azul moderno */
+  color: white; /* Texto blanco */
+  border: none; /* Sin bordes */
+  padding: 10px 20px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambiar cursor al pasar */
+  position: absolute; /* Fijar posición */
+  top: 10px; /* Distancia desde la parte superior */
+  right: 10px; /* Distancia desde la derecha */
+}
+
+.btn-cart-icon:hover {
+  background-color: #0056b3; /* Azul más oscuro al pasar */
+}
+
+/* Footer */
+footer {
+  background-color: #ddd; /* Fondo claro */
+  padding: 10px; /* Espaciado interno */
+  text-align: center; /* Centrar contenido */
+  color: #555; /* Color gris suave */
+  font-size: 14px; /* Tamaño pequeño */
+}

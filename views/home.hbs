@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de deportes Online</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Élite Sports</h1>
+    </header>
+
+    <main>
+        <!-- Lista de productos -->
+        <div id="product-list">
+            {{#each products}}
+            <div class="product-card" data-id="{{this._id}}">
+                <img src="data:image/jpeg;base64,{{this.imagen}}" class="card-img-top" alt="{{this.nombre}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.nombre}}</h5>
+                    <p class="card-text">Precio: ${{this.precio}}</p>
+                    <button class="btn btn-primary btn-add-cart" data-id="{{this._id}}">Agregar al carrito</button>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+        <!-- Botón para mostrar/ocultar el carrito -->
+        <button id="toggle-cart" class="btn-cart-icon">🛒 Ver Carrito</button>
+
+        <!-- Contenedor del carrito -->
+        <div id="cart" class="cart-container hidden">
+            <h4>Carrito de Compras</h4>
+            <div id="cart-items">
+                <!-- Aquí se mostrarán los productos del carrito -->
+            </div>
+            <div>
+                <p>Total: $<span id="cart-total">0</span></p>
+                <button id="empty-cart" class="btn btn-danger">Vaciar Carrito</button>
+                <button id="checkout-cart" class="btn btn-success">Finalizar Compra</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mi Tienda. Todos los derechos reservados.</p>
+    </footer>
+
+    
+    <script type="module" src="/js/cart.js"></script>
+
+
+</body>
+
+</html>
